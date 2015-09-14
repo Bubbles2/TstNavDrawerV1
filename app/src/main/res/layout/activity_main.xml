@@ -1,0 +1,29 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+    `
+    <ListView
+        android:id="@+id/drawerList"
+        android:entries="@array/planets"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left">
+    </ListView>
+    <ListView
+        android:id="@+id/listRight"
+        android:entries="@array/planets_actions"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+    </ListView>
+    
+    
+   </android.support.v4.widget.DrawerLayout>
