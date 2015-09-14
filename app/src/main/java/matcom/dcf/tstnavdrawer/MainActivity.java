@@ -6,19 +6,28 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
     private DrawerLayout drawerLayout;
     private ListView listview;
+    private String[] planets;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //
+        planets = getResources().getStringArray(R.array.planets);
+        //
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         listview = (ListView) findViewById(R.id.drawerList);
+        //
+        listview.setAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,planets));
+
+
     }
 
     @Override
