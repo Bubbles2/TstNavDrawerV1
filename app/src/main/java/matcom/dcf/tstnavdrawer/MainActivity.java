@@ -1,8 +1,10 @@
 package matcom.dcf.tstnavdrawer;
 
+import android.app.ActionBar;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     private DrawerLayout drawerLayout;
     private ListView listview;
     private String[] planets;
+    private ActionBarDrawerToggle drawerListener;
 
 
     @Override
@@ -26,6 +29,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         planets = getResources().getStringArray(R.array.planets);
         //
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawerListener = new ActionBarDrawerToggle(this,drawerLayout,R.drawable.ic_drawer,R.string.openDrawer,R.string.closeDrawer);
+
         listview = (ListView) findViewById(R.id.drawerList);
         //
         listview.setAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,planets));

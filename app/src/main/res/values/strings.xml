@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">TstNavDrawer</string>
 
+    <string name="openDrawer">Drawer is open</string>
+    <string name="closeDrawer">Drawer is closed</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string-array name="planets">
