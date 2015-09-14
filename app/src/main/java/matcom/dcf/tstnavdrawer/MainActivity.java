@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
     private DrawerLayout drawerLayout;
     private ListView listview;
     private String[] planets;
@@ -26,6 +29,7 @@ public class MainActivity extends Activity {
         listview = (ListView) findViewById(R.id.drawerList);
         //
         listview.setAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,planets));
+        listview.setOnItemClickListener(this);
 
 
     }
@@ -50,5 +54,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this,"The following planet has been selected  "+planets[position],Toast.LENGTH_LONG).show();
     }
 }
