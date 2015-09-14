@@ -59,5 +59,16 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this,"The following planet has been selected  "+planets[position],Toast.LENGTH_LONG).show();
+        selectItem(position);
+    }
+
+    public void selectItem(int position) {
+        listview.setItemChecked(position,true);
+        setTitle(planets[position]);
+    }
+
+    public void setTitle(String title) {
+        getActionBar().setTitle(title);
+
     }
 }
