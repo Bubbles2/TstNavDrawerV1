@@ -6,10 +6,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string-array name="planets">
-        <item>Mars</item>
-        <item>Venus</item>
-        <item>Jupiter</item>
+    <string-array name="social">
+        <item>Google</item>
+        <item>Twitter</item>
+        <item>Facebook</item>
+        <item>Pintrest</item>
     </string-array>
     <string-array name="planets_actions">
         <item>Explore</item>
