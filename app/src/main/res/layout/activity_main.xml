@@ -12,17 +12,19 @@
     `
     <ListView
         android:id="@+id/drawerList"
-        android:entries="@array/planets"
+        android:divider="@null"
         android:layout_width="240dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left">
+        android:layout_gravity="left"
+        android:background="#ccb72c">
     </ListView>
     <ListView
         android:id="@+id/listRight"
         android:entries="@array/planets_actions"
         android:layout_width="240dp"
         android:layout_height="match_parent"
-        android:layout_gravity="right">
+        android:layout_gravity="right"
+        android:background="#72cc96">
     </ListView>
     
     

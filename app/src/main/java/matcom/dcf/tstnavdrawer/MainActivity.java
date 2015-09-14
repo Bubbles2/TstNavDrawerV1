@@ -3,15 +3,35 @@ package matcom.dcf.tstnavdrawer;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
+    private DrawerLayout drawerLayout;
+    private ListView listview;
+    private String[] planets;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //
+        planets = getResources().getStringArray(R.array.planets);
+        //
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        listview = (ListView) findViewById(R.id.drawerList);
+        //
+        listview.setAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,planets));
+        listview.setOnItemClickListener(this);
+
+
     }
 
     @Override
@@ -34,5 +54,21 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this,"The following planet has been selected  "+planets[position],Toast.LENGTH_LONG).show();
+        selectItem(position);
+    }
+
+    public void selectItem(int position) {
+        listview.setItemChecked(position,true);
+        setTitle(planets[position]);
+    }
+
+    public void setTitle(String title) {
+        getActionBar().setTitle(title);
+
     }
 }
